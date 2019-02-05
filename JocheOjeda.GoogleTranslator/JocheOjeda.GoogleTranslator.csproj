@@ -3,6 +3,10 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Configurations>Debug;Release;18_2_4_1;18_2_3_1;18_2_5_1</Configurations>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Jose Manuel Ojeda Melgar</Authors>
+    <Company>BIT Frameworks</Company>
+    <Description>An encapsulation of google translator apis</Description>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="CommandLineParser">

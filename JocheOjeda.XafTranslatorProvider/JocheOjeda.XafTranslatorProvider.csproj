@@ -3,20 +3,33 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Configurations>Debug;Release;18_2_3_1;18_2_4_1;18_2_5_1</Configurations>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>A Xaf translation provider that use google translation API</Description>
     <Copyright>Jose Manuel Ojeda Melgar 2018</Copyright>
     <PackageTags>XAF, Model, Translation,Google API, Google Translator</PackageTags>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '18_2_3_1|AnyCPU'">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>18.2.3.1</Version>
   </PropertyGroup>
-
-  <ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '18_2_4_1|AnyCPU'">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>18.2.4.1</Version>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '18_2_5_1|AnyCPU'">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>18.2.5.1</Version>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
     <PackageReference Include="DevExpress.ExpressApp" Version="18.2.3" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == '18_2_4_1' ">
+  <ItemGroup Condition=" '$(Configuration)' == '18_2_3_1' ">
+    <PackageReference Include="DevExpress.ExpressApp" Version="18.2.3" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)' == '18_2_4_1' ">
     <PackageReference Include="DevExpress.ExpressApp" Version="18.2.4" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == '18_2_5_1' ">
+  <ItemGroup Condition=" '$(Configuration)' == '18_2_5_1' ">
     <PackageReference Include="DevExpress.ExpressApp" Version="18.2.5" />
   </ItemGroup>
   <ItemGroup>
