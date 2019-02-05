@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
     <Configurations>Debug;Release;18_2_4_1;18_2_3_1;18_2_5_1</Configurations>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Jose Manuel Ojeda Melgar</Authors>
@@ -25,4 +25,7 @@
       <Version>1.11.0</Version>
     </PackageReference>
   </ItemGroup>
+  <Target Name="CopyPackage" AfterTargets="Pack">
+    <Copy SourceFiles="$(OutputPath)\$(PackageId).$(PackageVersion).nupkg" DestinationFolder="C:\Users\Joche\Documents\MyNugets\" />
+  </Target>
 </Project>

@@ -1,11 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
     <Configurations>Debug;Release;18_2_3_1;18_2_4_1;18_2_5_1</Configurations>
     <Description>A Xaf translation provider that use google translation API</Description>
     <Copyright>Jose Manuel Ojeda Melgar 2018</Copyright>
     <PackageTags>XAF, Model, Translation,Google API, Google Translator</PackageTags>
+    <Authors>Jose Manuel Ojeda Melgar</Authors>
+    <Company>BIT Frameworks</Company>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '18_2_3_1|AnyCPU'">
@@ -35,5 +37,7 @@
   <ItemGroup>
     <ProjectReference Include="..\JocheOjeda.GoogleTranslator\JocheOjeda.GoogleTranslator.csproj" />
   </ItemGroup>
-
+  <Target Name="CopyPackage" AfterTargets="Pack">
+    <Copy SourceFiles="$(OutputPath)\$(PackageId).$(PackageVersion).nupkg" DestinationFolder="C:\Users\Joche\Documents\MyNugets\" />
+  </Target>
 </Project>
